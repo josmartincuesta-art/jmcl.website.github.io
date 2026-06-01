@@ -1,2 +1,9 @@
 # jmcl.website.github.io
-Mi web personal para tener presencia en Internet. Posicionamiento SEO, palabras clave, gestión de contenidos digitales, usabilidad y accesibilidad.
+Portafolio de jmcl.website - Desarrollo Web y Diseño UX.
+Programada en HTML5, CSS3, JavaScript.
+Mapa Web - 
+Instrucciones clonar y ejecutar localmente.
+Licencia MIT.
+email contactar josmartin.cuesta@gmail.com 
+desarrollo web, diseño UX, portafolio.
+
