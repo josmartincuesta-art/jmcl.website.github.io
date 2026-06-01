@@ -1,0 +1,29 @@
+<style>
+        /* 1. PROTECCIÓN POR CSS: Evita la selección y el arrastre */
+        .bloquear-imagen {
+            -webkit-user-select: none;  /* Safari */
+            -moz-user-select: none;     /* Firefox */
+            -ms-user-select: none;      /* IE10+/Edge */
+            user-select: none;          /* Estándar */
+            
+            -webkit-user-drag: none;    /* Safari/Chrome */
+            user-drag: none;            /* Estándar */
+        }
+
+        /* 2. TRUCO DE LA CAPA TRANSPARENTE (Opcional pero muy efectivo) */
+        .contenedor-foto {
+            position: relative;
+            display: inline-block;
+        }
+        /* Creamos un escudo invisible sobre la imagen */
+        .contenedor-foto::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0); /* Totalmente transparente */
+            z-index: 10;
+        }
+    </style>

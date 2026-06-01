@@ -1,0 +1,101 @@
+/*La herramienta clave: Media Queries (CSS)
+Las Media Queries son condiciones en CSS. Le dicen al navegador: "Si la pantalla mide menos de X píxeles, aplica estos estilos; si mide más, aplica estos otros".
+Los puntos de corte estándar (llamados breakpoints) suelen ser los siguientes. Puedes añadir este bloque a tu archivo CSS:*/
+/* Base: Estilos para móviles (Smartphone) */
+body {
+    font-size: 14px;
+    background-color: black;
+}
+.contenedor {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+    padding: 10px;
+}
+
+/* Tablets (Pantallas de más de 768px de ancho) */
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    .contenedor {
+        width: 90%; /* Deja un pequeño margen a los lados */
+    }
+}
+
+/* Laptops y ordenadores portátiles (Más de 1024px) */
+@media (min-width: 1024px) {
+    .contenedor {
+        width: 80%; 
+    }
+}
+
+/* Pantallas grandes de escritorio (Más de 1200px) */
+@media (min-width: 1200px) {
+    .contenedor {
+        max-width: 1200px; /* Evita que el contenido se estire infinitamente */
+        margin: 0 auto;    /* Centra el sitio en pantallas gigantes */
+    }
+}
+
+/*Diseña con estructuras flexibles (Flexbox y Grid)
+Por ejemplo, si tienes tres tarjetas de servicios que en una computadora se ven una al lado de la otra, en un móvil deberían ponerse una debajo de otra:
+*/
+.seccion-tarjetas {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos salten de línea si no caben */
+    gap: 20px;       /* Espacio entre tarjetas */
+}
+
+.tarjeta {
+    flex: 1 1 300px; /* Al menos medirán 300px, si no caben, saltan abajo automáticamente */
+    background: #f4f4f4;
+}
+
+/*Imágenes y Videos Responsivos
+Para que una imagen no se desborde de la pantalla de un teléfono y cree una molesta barra de desplazamiento horizontal, añade esta regla general en tu CSS:*/
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Limitar el tamaño máximo de la imagen (La más rápida)*/
+img {
+    width: 100%;       /* Ocupa el 100% del ancho en pantallas pequeñas (móviles) */
+    max-width: 500px;  /* ¡CLAVE! En pantallas grandes, nunca medirá más de 500px */
+    height: auto;      /* Mantiene la proporción para que no se deforme */
+    display: block;    /* Ayuda a alinearla mejor */
+    margin: 0 auto;    /* Opcional: Centra la imagen si el contenedor es más grande */
+}
+
+/*Controlar la imagen a través de su contenedor*/
+/* La caja contenedora cambia según el dispositivo */
+.contenedor-tarjeta {
+    width: 100%;        /* En móvil ocupa todo el ancho */
+    max-width: 450px;   /* En laptop se frena en 450px */
+    margin: 0 auto;     /* Centra la caja en la pantalla de la laptop */
+}
+
+/* La imagen simplemente obedece al tamaño de la caja */
+.contenedor-tarjeta img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Estilo base (el que ya programaste para móvil) */
+img.mi-foto {
+    width: 100%;
+    height: auto;
+}
+
+/*Usar una Media Query para laptops*/
+/* Estilo exclusivo para laptops y pantallas grandes (más de 1024px) */
+@media (min-width: 1024px) {
+    img.mi-foto {
+        width: 350px; /* En la laptop tendrá exactamente este tamaño */
+        float: left;  /* Opcional: hace que el texto flote a su lado */
+        margin-right: 20px;
+    }
+}
+
+
