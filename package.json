@@ -1,7 +1,12 @@
 {
-  "name": "mi-proyecto",
+  "name": "jmcl.website.github.io",
   "version": "1.0",
   "scripts": {
     "build": "cp -r src/* dist/"
   }
+
+}
+"scripts": {
+  "build": "cp -r src/* dist/",
+  "watch": "nodemon --exec npm run build --watch src/"
 }
