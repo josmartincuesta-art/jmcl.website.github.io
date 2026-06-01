@@ -16,7 +16,7 @@ build/
 *.min.css
 
 # Archivos de configuración
-.en
+.env
 
 # Otros
 *.log
