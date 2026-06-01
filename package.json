@@ -1,0 +1,11 @@
+{
+  "name": "jmcl.website.github.io",
+  "version": "1.0",
+  "scripts": {
+    "build": "xcopy /s /y src dist",
+    "watch": "nodemon --exec npm run build --watch src/"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
