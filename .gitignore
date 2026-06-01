@@ -1,23 +1,12 @@
-# Archivos de IDE
 .vscode/
 .idea/
-
-# Archivos de node_modules (si usas npm)
 node_modules/
-
-# Archivos de caché del navegador
 .DS_Store
 Thumbs.db
-
-# Archivos de compilación y minificación
 dist/
 build/
 *.min.js
 *.min.css
-
-# Archivos de configuración
 .env
-
-# Otros
 *.log
 tmp/
