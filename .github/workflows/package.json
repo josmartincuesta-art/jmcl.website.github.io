@@ -1,7 +1,0 @@
-{
-  "name": "jmcl.website.github.io",
-  "version": "1.0",
-  "scripts": {
-    "build": "cp -r src/* dist/"
-  }
-}
