@@ -3,3 +3,4 @@ Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 
 Sitemap: https://www.jmcl.website
+Sitemap: https://online1git.jmcl.website
