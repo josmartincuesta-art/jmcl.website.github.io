@@ -2,7 +2,7 @@
   "name": "jmcl.website.github.io",
   "version": "1.0",
   "scripts": {
-    "build": "xcopy /s /y src dist",
+    "build": "xcopy /s /y src docs",
     "watch": "nodemon --exec npm run build --watch src/"
   },
   "devDependencies": {
