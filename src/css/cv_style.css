@@ -1,0 +1,87 @@
+/*Estilo del botón de apertura */
+.btn-cv {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0076ff; /* Azul tecnológico */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    transition: background 0.3s ease;
+}
+
+.btn-cv:hover {
+    background-color: #0056b3;
+}   
+
+
+/* Fondo oscuro del modal (oculto por defecto) */
+.modal-overlay {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    justify-content: center;
+    align-items: center;
+}/* Estilo del botón de apertura */
+.btn-cv {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0076ff; /* Azul tecnológico */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    transition: background 0.3s ease;
+}
+
+.btn-cv:hover {
+    background-color: #0056b3;
+
+/* Contenedor de la ventana flotante */
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    height: 85vh;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Botón de cerrar (X) */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #ff0000;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        height: 90vh;
+    }
+}
