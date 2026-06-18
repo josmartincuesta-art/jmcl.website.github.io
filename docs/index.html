@@ -16,12 +16,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>"https://www.jmcl.website" Mi Web de Posicionamiento SEO, con mi Estrategia de palabras clave ( que el SEO lo sepa) con planificación y organización de la Información Gestión de mis Contenidos Digitales. Y para que otros me conozcan mejor, Usabilidad y Accesibilidad Web. "https://online1git.jmcl.website"</title>
   <link rel="icon" type="image/gif" href="./assets/icons/icono_jmcl.gif">
-	<meta property="og:image" content="https://jmcl.website/assets/icons/icono_jmcl_jpeg.jpeg">
-	<meta property="og:image:type" content="image/jpeg">
+	  <meta property="og:image" content="https://jmcl.website/assets/icons/icono_jmcl_jpeg.jpeg">
+	  <meta property="og:image:type" content="image/jpeg">
 		<meta name="twitter:image" content="https://jmcl.website/assets/icons/icono_jmcl_jpeg.jpeg">
 	<link rel="stylesheet" href="./css/styles.css"/>
-   <link rel="stylesheet" href="./css/protect_images.css"/>
-    <link rel="stylesheet" href="./css/style_responsivo.css"/> 
+  <link rel="stylesheet" href="./css/protect_images.css"/>
+  <link rel="stylesheet" href="./css/style_responsivo.css"/>
+  <link rel="stylesheet" href="./css/cv_style.css"/> 
+
     
 </head>
 <body>
@@ -57,7 +59,7 @@ Mi posicionamiento SEO</font>
 
   <nav class="menu-scroll">
     <a href="index.html">Inicio</a>  <!--ocultando enlaces obsoletos barra navegación
-    <a href="sobre-mi.html">Sobre mí</a>
+    <a href="sobre_mi.html">Sobre mí</a>
     <a href="proyectos.html">Proyectos</a>
     <a href="galeria.html">Galería</a>
     <a href="contacto.html">Contacto</a>
@@ -69,7 +71,14 @@ Mi posicionamiento SEO</font>
 		<thead>
       <tr>
         <td width="50%"><img src="assets/imgs/miperfil_portada.jpeg" alt="mi selfie" width="100%" style="border-radius:12px" class="bloquear-imagen" oncontextmenu="return false;"/></td>
-        <td align="left"> Bienvenid@<br>Yo soy el de la foto de la izquierda.<br><br>Yo he creado este sitio web.
+        <td align="left"> Bienvenid@<br>Yo soy el de la foto de la izquierda.<br><br>Yo he creado este sitio web.<br><br>
+          <div id="cvModal" class="modal-overlay">
+    <div class="modal-content">
+        <span id="closeCV" class="modal-close">&times;</span>
+        
+        <iframe src="https://jmcl.website/docs/html/curriculum_profesional.html" width="100%" height="100%" style="border: none;"></iframe>
+        
+    </div>
 </td>
       </tr>
 	</thead>
@@ -200,6 +209,8 @@ Sorpresa Mayúscula<br>
   <script src="./js/spotify.js"></script>
   <script src="./js/youtube.js"></script>
   <script src="./js/protect_images.js"></script>
+  <script src="./js/cv.js"></script>
+
    
 </body>
 </html>
