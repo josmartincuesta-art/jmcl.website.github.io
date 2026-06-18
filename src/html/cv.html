@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Académico y Portafolio Profesional</title>
+    <style>
+        /* CSS Reset & Variable Definitions */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --bg-color: #f7f9fa;
+            --text-color: #2c3e50;
+            --primary-color: #1a365d; /* Dark Blue Slate */
+            --accent-color: #d4af37;  /* Muted Gold Accent */
+            --accent-light: #fdfbf7;  /* Warm Cream for boxes */
+            --border-color: #e2e8f0;
+            --subtle-text: #64748b;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Header / Personal Data Section */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 28pt;
+            color: var(--primary-color);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        header .subtitle {
+            font-size: 13pt;
+            color: var(--accent-color);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        header .contact-info {
+            font-size: 10.5pt;
+            color: var(--subtle-text);
+        }
+
+        header .contact-info span {
+            margin: 0 10px;
+        }
+
+        header .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        header .contact-info a:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* Executive Summary / Vision Box */
+        .vision-box {
+            background-color: var(--accent-light);
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .vision-box p {
+            font-style: italic;
+            color: #4a5568;
+            font-size: 11pt;
+        }
+
+        /* Section Layout */
+        section {
+            margin-bottom: 45px;
+        }
+
+        h2 {
+            font-size: 15pt;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 6px;
+            margin-bottom: 25px;
+        }
+
+        /* Timeline / Item Styles */
+        .academic-item {
+            margin-bottom: 25px;
+            page-break-inside: avoid;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .item-header {
+                flex-direction: column;
+            }
+            .item-date {
+                margin-top: 2px;
+            }
+        }
+
+        .item-title {
+            font-size: 12pt;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .item-institution {
+            font-size: 11pt;
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        .item-date {
+            font-size: 10.5pt;
+            font-weight: 600;
+            color: var(--accent-color);
+            white-space: nowrap;
+        }
+
+        .item-details {
+            font-size: 10.5pt;
+            color: #4a5568;
+            margin-top: 5px;
+            padding-left: 15px;
+            list-style-type: square;
+        }
+
+        .item-details li {
+            margin-bottom: 4px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-size: 8.5pt;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        /* Project & Portfolio Custom Styles */
+        .project-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 22px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .project-card h3 {
+            font-size: 12pt;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        /* Timeline Table Format */
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .timeline-table th, .timeline-table td {
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 10.5pt;
+        }
+
+        .timeline-table th {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 9.5pt;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .timeline-table td.year-col {
+            font-weight: 700;
+            color: var(--accent-color);
+            width: 15%;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 9pt;
+            color: var(--subtle-text);
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <!-- ESPACIO RESERVADO PARA DATOS PERSONALES -->
+        <h1>[Tu Nombre y Apellidos]</h1>
+        <div class="subtitle">Especialista en Marketing Digital, Estrategia Comercial y Tecnologías Multimedia</div>
+        <div class="contact-info">
+            <span><strong>Email:</strong> josmartin.cuesta@gmail.com</span> | 
+            <span><strong>Teléfono:</strong> +34 XXX XX XX XX</span><br>
+            <span><strong>Ubicación:</strong> Noia, A Coruña, España</span> | 
+            <span><strong>Web:</strong> <a href="http://www.jmcl.website" target="_blank">www.jmcl.website</a></span> |
+            <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/josé-martín-c-314898417">linkedin.com/in/josé-martín-c-314898417</a></span>
+        </div>
+    </header>
+
+    <div class="vision-box">
+        <p><strong>Declaración Profesional:</strong> Perfil directivo y técnico caracterizado por una evolución constante y una sólida capacidad de adaptación cognitiva. Pionero en formación superior interactiva y universitaria online hace más de 25 años. Trayectoria que hibrida sólidos fundamentos de gestión empresarial y marketing con una profunda y ágil actualización de software mental hacia las competencias web, multimedia y digitales de última generación.</p>
+    </div>
+
+    <!-- CATEGORÍA 1 -->
+    <section id="tecnologia">
+        <h2>1. Tecnología y Competencias Digitales</h2>
+        
+        <div class="academic-item">
+            <div class="item-header">
+                <span class="item-title">Certificado de Competencias Digitales Avanzadas</span>
+                <span class="item-date">Febrero 2026</span>
+            </div>
+            <div class="item-institution">Programa Formación Talentia, Xunta de Galicia - Unión Europea</div>
+            <ul class="item-details">
+                <li>Duración lectiva: 200 horas acreditadas.</li>
+                <li>Especialización en herramientas informáticas de vanguardia, gestión ágil y adopción de tecnologías transformadoras en ecosistemas europeos corporativos.</li>
+            </ul>
+        </div>
+
+        <div class="academic-item">
+            <div class="item-header">
+                <span class="item-title">Certificado en Comunicación Multimedia, Audiovisual y Web</span>
+                <span class="item-date">Mayo 2004</span>
+            </div>
+            <div class="item-institution">Centro Multimedia de Galicia (CMG) - Dirección General de Comunicación y Audiovisual, Xunta de Galicia</div>
+            <ul class="item-details">
+                <li>Programa de Formación de Alto Rendimiento 2003/2004.</li>
+                <li>Capacitación en diseño audiovisual interactivo, lenguajes multimedia aplicados y estructuración de contenidos en red.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CATEGORÍA 2 -->
+    <section id="economia">
+        <h2>2. Economía, Gestión Empresarial y Marketing</h2>
+        
+        <div class="academic-item">
+            <div class="item-header">
+                <span class="item-title">Diploma en Marketing</span>
+                <span class="item-date">Junio 2000</span>
+            </div>
+            <div class="item-institution">Aula Activa: Universidad Complutense de Madrid (UCM) & Universitat Oberta de Catalunya (UOC)</div>
+            <ul class="item-details">
+                <li>Formación superior interuniversitaria orientada al análisis de mercado, comportamiento del consumidor y estrategia de posicionamiento comercial.</li>
+            </ul>
+        </div>
+
+        <div class="academic-item">
+            <div class="item-header">
+                <span class="item-title">Certificado en Marketing</span>
+                <span class="item-date">Febrero 2000</span>
+            </div>
+            <div class="item-institution">Aula Activa: Universidad Complutense de Madrid (UCM) & Universitat Oberta de Catalunya (UOC)</div>
+            <ul class="item-details">
+                <li>Carga docente: 210 horas.</li>
+                <li>Profundización en técnicas operativas de marketing mixto, canales de distribución y comunicación corporativa.</li>
+            </ul>
+        </div>
+
+        <div class="academic-item">
+            <div class="item-header">
+                <span class="item-title">Gestión Empresarial</span>
+                <span class="item-date">Septiembre 2000</span>
+            </div>
+            <div class="item-institution">Formación Ocupacional: Dirección General de Formación y Colocación, Xunta de Galicia</div>
+            <ul class="item-details">
+                <li>Carga docente: 570 horas.</li>
+                <li>Estructura directiva, contabilidad analítica, viabilidad de proyectos, fiscalidad corporativa y legislación comercial.</li>
+            </ul>
+        </div>
+
+        <div class="academic-item">
+            <div class="item-header">
+                <span class="item-title">Informática de Gestión Empresarial</span>
+                <span class="item-date">Agosto 1999</span>
+            </div>
+            <div class="item-institution">Formación Ocupacional: Dirección General de Formación y Colocación, Xunta de Galicia</div>
+            <ul class="item-details">
+                <li>Carga docente: 300 horas.</li>
+                <li>Sistemas de información integrados (ERP), bases de datos aplicadas al control de gestión y automatización de procesos administrativos.</li>
+            </ul>
+        </div>
+
+        <div class="academic-item">
+            <div class="item-header">
+                <span class="item-title">Técnico de Marketing</span>
+                <span class="item-date">Noviembre 1998</span>
+            </div>
+            <div class="item-institution">Formación Ocupacional: Dirección General de Formación y Colocación, Xunta de Galicia</div>
+            <ul class="item-details">
+                <li>Carga docente: 500 horas.</li>
+                <li>Planificación de ventas, investigación comercial, técnicas de negociación y gestión de redes comerciales.</li>
+            </ul>
+        </div>
+
+        <div class="academic-item">
+            <div class="item-header">
+                <span class="item-title">Seminario sobre Creación de Empresas</span>
+                <span class="item-date">Junio 2000</span>
+            </div>
+            <div class="item-institution">Educación Permanente IGAPE - Consejería de Educación y Ordenación Universitaria, Xunta de Galicia</div>
+            <ul class="item-details">
+                <li>Análisis de viabilidad del ecosistema emprendedor y líneas de financiación de proyectos innovadores.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CATEGORÍA 3 -->
+    <section id="web-nube">
+        <h2>3. Desarrollo Web y Entornos en la Nube</h2>
+        
+        <div class="academic-item">
+            <div class="item-header">
+                <span class="item-title">Graduado Superior en Comunicación Interactiva</span> <span class="badge">Matrícula de Honor</span>
+                <span class="item-date">Enero 2005</span>
+            </div>
+            <div class="item-institution">Escuela Superior de Artes y Ciencias (ESAC), Madrid</div>
+            <ul class="item-details">
+                <li>Titulación de ciclo largo (240 créditos) especializada en interactividad digital, arquitectura de la información, lenguajes de programación e internet.</li>
+                <li><strong>Proyecto de Fin de Carrera Destacado:</strong> Concepción y desarrollo técnico integral de una tienda dinámica y completamente operativa para la comercialización de productos online (E-commerce nativo).</li>
+                <li><strong>Prácticas Profesionales Incorporadas:</strong> Ogilvy Interactive (Desarrollo y maquetación de proyectos digitales para cuentas internacionales de primer nivel).</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CATEGORÍA 4 -->
+    <section id="cronologico">
+        <h2>4. Orden Cronológico Curricular</h2>
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th style="width: 15%;">Año</th>
+                    <th style="width: 50%;">Titulación Académica Superior / Certificación</th>
+                    <th style="width: 35%;">Institución Emisora</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="year-col">2026</td>
+                    <td>Certificado de Competencias Digitales Avanzadas (200h)</td>
+                    <td>Xunta de Galicia - Unión Europea</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2005</td>
+                    <td>Graduado Superior en Comunicación Interactiva (240 Créditos)</td>
+                    <td>Escuela Superior ESAC, Madrid</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2004</td>
+                    <td>Certificado Comunicación Multimedia, Audiovisual y Web</td>
+                    <td>Centro Multimedia de Galicia (CMG)</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2000</td>
+                    <td>Diploma en Marketing (Educación Universitaria Online)</td>
+                    <td>Aula Activa: UCM & UOC</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2000</td>
+                    <td>Certificado en Marketing (210h)</td>
+                    <td>Aula Activa: UCM & UOC</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2000</td>
+                    <td>Gestión Empresarial (570h)</td>
+                    <td>D.G. Formación y Colocación, Xunta</td>
+                </tr>
+                <tr>
+                    <td class="year-col">2000</td>
+                    <td>Seminario Creación de Empresas</td>
+                    <td>IGAPE - Xunta de Galicia</td>
+                </tr>
+                <tr>
+                    <td class="width: 15%; year-col">1999</td>
+                    <td>Informática de Gestión Empresarial (300h)</td>
+                    <td>D.G. Formación y Colocación, Xunta</td>
+                </tr>
+                <tr>
+                    <td class="year-col">1998</td>
+                    <td>Técnico de Marketing (500h)</td>
+                    <td>D.G. Formación y Colocación, Xunta</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- CATEGORÍA 5 (Portafolio interactivo listo para rellenar) -->
+    <section id="portafolio">
+        <h2>5. Portafolio de Proyectos y Casos de Éxito</h2>
+        
+        <div class="project-card">
+            <h3>🛒 E-Commerce Dinámico — Proyecto Fin de Carrera (ESAC)</h3>
+            <p style="font-size: 10.5pt; color: #4a5568; margin-bottom: 10px;">
+                <strong>Descripción:</strong> Desarrollo de una tienda dinámica y 100% operativa desde cero, enfocada a la automatización de catálogos y transacciones electrónicas seguras. Anticipó tendencias críticas de venta en línea.
+            </p>
+            <p style="font-size: 9.5pt; color: var(--subtle-text);">
+                <strong>Habilidades aplicadas:</strong> Programación web, Lógica de Base de Datos, Interactividad, Arquitectura de la Información.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>🏢 Prácticas Profesionales Immersivas — Ogilvy Interactive</h3>
+            <p style="font-size: 10.5pt; color: #4a5568; margin-bottom: 10px;">
+                <strong>Descripción:</strong> Integración en los equipos de producción web y estrategia interactiva de una de las agencias de publicidad digital más prestigiosas del mundo. Colaboración en campañas multimedia y despliegues masivos.
+            </p>
+            <p style="font-size: 9.5pt; color: var(--subtle-text);">
+                <strong>Habilidades aplicadas:</strong> Comunicación Audiovisual Corporativa, Trabajo bajo Metodologías de Agencia, Estándares de Diseño Publicitario.
+            </p>
+        </div>
+
+        <div class="project-card" style="border-style: dashed; background-color: #fafbfc; text-align: center; padding: 30px;">
+            <p style="color: var(--subtle-text); font-style: italic; font-size: 11pt;">
+                ➕ [Espacio disponible para incorporar nuevos proyectos en Cloud<!-- , Desarrollos Modernos en Python o Casos de Consultoría de Marketing -->]
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Curriculum Vitae Profesional e Interactivo. Todos los derechos reservados.</p>
+    </footer>
+</div>
+
+</body>
+</html>
