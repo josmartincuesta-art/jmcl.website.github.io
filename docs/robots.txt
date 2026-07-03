@@ -1,0 +1,7 @@
+1
+2
+3
+4
+User-agent: *
+Allow: /
+Sitemap: https://www.jmcl.website/sitemap.xml
