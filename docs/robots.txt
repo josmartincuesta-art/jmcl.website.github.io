@@ -4,4 +4,4 @@
 4
 User-agent: *
 Allow: /
-Sitemap: https://jmcl.website/#gsc.tab=0/sitemap.xml
+Sitemap: https://www.jmcl.website/sitemap.xml
